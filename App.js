@@ -1,3 +1,5 @@
+//Edit this file and review changes in expo via simulator or device
+
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 
