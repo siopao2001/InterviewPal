@@ -3,6 +3,7 @@ import React, {useState, useEffect} from 'react';
 import { Text, View, Button, TextInput } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
+import { answers } from '../data-hardcoded/data';
 import { addAnswer } from '../data_helpers/dataHelpers';
 
 // export default function QuestionScreen({ route, navigation }) {
