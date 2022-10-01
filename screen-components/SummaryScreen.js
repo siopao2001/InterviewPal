@@ -23,10 +23,10 @@ import { lastAnswerByQuestionID } from '../data_helpers/dataHelpers';
 export default function SummaryScreen({ route, navigation }) {
   const { array, arrayofAns } = route.params;
   const questionsList = array.map((q) =>
-    <div key={q.id}> 
+    <View key={q.id}> 
      <Text>{q.text}</Text>
      <Text>{lastAnswerByQuestionID(arrayofAns, q.id)}</Text>
-    </div>
+    </View>
    )
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>

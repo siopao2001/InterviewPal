@@ -41,7 +41,7 @@ export default function QuestionScreen({ route, navigation }) {
 
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <h1>{time}</h1>
+      <Text>{time}</Text>
       <Text>This is the category number for this question: </Text>
       <Text>This is the question number for this question: {questionIndex}</Text>
       <Text>{array[questionIndex].text}</Text>
