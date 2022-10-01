@@ -3,7 +3,7 @@ import { Text, View, Button } from 'react-native';
 // import { NavigationContainer } from '@react-navigation/native';
 // import { createStackNavigator } from '@react-navigation/stack';
 import { categories, questions } from '../data-hardcoded/data';
-import { getQuestionsByCatId } from '../data_helpers/dataHelpers';
+import { getQuestionsByCatId, randomValuesFromArray } from '../data_helpers/dataHelpers';
 
 // export default function CategoriesScreen({ navigation }) {
   
