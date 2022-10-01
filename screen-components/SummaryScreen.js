@@ -20,7 +20,7 @@ import { lastAnswerByQuestionID } from '../data_helpers/dataHelpers';
 //   );
 // }
 
-export function SummaryScreen({ route, navigation }) {
+export default function SummaryScreen({ route, navigation }) {
   const { array, arrayofAns } = route.params;
   const questionsList = array.map((q) =>
     <div> 

@@ -45,7 +45,7 @@ import { getQuestionsByCatId } from '../data_helpers/dataHelpers';
 //   );
 // }
 
-export function CategoriesScreen({navigation}) {
+export default function CategoriesScreen({navigation}) {
    const categoriesList = categories.map((cat) => 
             <Button
                 title={cat.catName}
