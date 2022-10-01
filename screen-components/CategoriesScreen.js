@@ -48,6 +48,7 @@ import { getQuestionsByCatId } from '../data_helpers/dataHelpers';
 export default function CategoriesScreen({navigation}) {
    const categoriesList = categories.map((cat) => 
             <Button
+                key={cat.id}
                 title={cat.catName}
              onPress={() => {
                  let QuestionsByCategory = getQuestionsByCatId(cat.id, questions)

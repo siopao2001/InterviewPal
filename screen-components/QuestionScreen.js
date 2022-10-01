@@ -24,7 +24,7 @@ import { addAnswer } from '../data_helpers/dataHelpers';
 //   );
 // }
 
-export function QuestionScreen({ route, navigation }) {
+export default function QuestionScreen({ route, navigation }) {
   const { array, questionIndex} = route.params;
   const [text, onChangeText] = useState("Your answer");
   const [time, setTime] = useState(0);
