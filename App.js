@@ -17,7 +17,7 @@ export default function App() {
       <Stack.Navigator>
         <Stack.Screen name="Home" component={HomeScreen} />
         <Stack.Screen name="Categories" component={CategoriesScreen} />
-        <Stack.Screen name="Question" component={QuestionScreen} initialParams={{ questionId: 1 }}/>
+        <Stack.Screen name="Question" component={QuestionScreen} initialParams={{ questionIndex: 0 }}/>
         <Stack.Screen name="Summary" component={SummaryScreen} />
       </Stack.Navigator>
     </NavigationContainer>
