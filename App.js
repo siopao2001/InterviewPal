@@ -1,4 +1,7 @@
-//Edit this file and review changes in expo via simulator or device
+import * as React from 'react';
+import { Text, View, Button } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
 
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
@@ -7,17 +10,25 @@ import Login from './components/login';
 import Signup from './components/signup';
 import Dashboard from './components/dashboard';
 const Stack = createStackNavigator();
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import HomeScreen from './screen-components/HomeScreen';
+import CategoriesScreen from './screen-components/CategoriesScreen';
+import QuestionScreen from './screen-components/QuestionScreen';
+import SummaryScreen from './screen-components/SummaryScreen';
 
-// export default function App() {
-//   return (
-//     <View style={styles.container}>
-//       <Text>Open up App.js to start working on your app!</Text>
-//       <StatusBar style="auto" />
-//     </View>
-//   );
-// }
+
+
+export default function App() {
+  return (
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name="Home" component={HomeScreen} />
+        <Stack.Screen name="Categories" component={CategoriesScreen} />
+        <Stack.Screen name="Question" component={QuestionScreen} initialParams={{ questionIndex: 0 }}/>
+        <Stack.Screen name="Summary" component={SummaryScreen} />
+      </Stack.Navigator>
+    </NavigationContainer>
+  );
+}
 
 const styles = StyleSheet.create({
   container: {
