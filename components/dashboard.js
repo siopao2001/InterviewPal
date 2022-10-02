@@ -1,7 +1,7 @@
 // components/dashboard.js
 import React, { Component } from 'react';
 import { StyleSheet, View, Text, Button } from 'react-native';
-import firebase from '../db/firebase';
+import firebaseDb from '../firebaseDb';
 export default class Dashboard extends Component {
   constructor() {
     super();
@@ -10,15 +10,15 @@ export default class Dashboard extends Component {
     }
   }
   signOut = () => {
-    firebase.auth().signOut().then(() => {
+    firebaseDb.auth().signOut().then(() => {
       this.props.navigation.navigate('Login')
     })
     .catch(error => this.setState({ errorMessage: error.message }))
   }  
   render() {
     this.state = { 
-      displayName: firebase.auth().currentUser.displayName,
-      uid: firebase.auth().currentUser.uid
+      displayName: firebaseDb.auth().currentUser.displayName,
+      uid: firebaseDb.auth().currentUser.uid
     }    
     return (
       <View style={styles.container}>

@@ -1,7 +1,7 @@
 // components/signup.js
 import React, { Component } from 'react';
 import { StyleSheet, Text, View, TextInput, Button, Alert, ActivityIndicator } from 'react-native';
-import firebase from '../db/firebase';
+import firebaseDb from '../firebaseDb';
 
 export default class Signup extends Component {
   
@@ -19,31 +19,37 @@ export default class Signup extends Component {
     state[prop] = val;
     this.setState(state);
   }
-  registerUser = () => {
-    if(this.state.email === '' && this.state.password === '') {
-      Alert.alert('Enter details to signup!')
+  _registerUser = () => {
+    if (this.state.email === '' && this.state.password === '') {
+      Alert.alert('Enter details to signup!');
     } else {
       this.setState({
         isLoading: true,
-      })
-      firebase
-      .auth()
-      .createUserWithEmailAndPassword(this.state.email, this.state.password)
-      .then((res) => {
-        res.user.updateProfile({
-          displayName: this.state.displayName
+      });
+      firebaseDb
+        .auth()
+        .createUserWithEmailAndPassword(this.state.email, this.state.password)
+        .then((res) => {
+          res.user.updateProfile({
+            displayName: this.state.displayName
+          });
+          console.log('User registered successfully!');
+          this.setState({
+            isLoading: false,
+            displayName: '',
+            email: '',
+            password: ''
+          });
+          this.props.navigation.navigate('Login');
         })
-        console.log('User registered successfully!')
-        this.setState({
-          isLoading: false,
-          displayName: '',
-          email: '', 
-          password: ''
-        })
-        this.props.navigation.navigate('Login')
-      })
-      .catch(error => this.setState({ errorMessage: error.message }))      
+        .catch(error => this.setState({ errorMessage: error.message }));
     }
+  };
+  get registerUser() {
+    return this._registerUser;
+  }
+  set registerUser(value) {
+    this._registerUser = value;
   }
   render() {
     if(this.state.isLoading){

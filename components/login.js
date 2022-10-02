@@ -1,7 +1,7 @@
 // components/login.js
 import React, { Component } from 'react';
 import { StyleSheet, Text, View, TextInput, Button, Alert, ActivityIndicator } from 'react-native';
-import firebase from '../db/firebase';
+import firebaseDb from '../firebaseDb';
 
 export default class Login extends Component {
   
@@ -25,7 +25,7 @@ export default class Login extends Component {
       this.setState({
         isLoading: true,
       })
-      firebase
+      firebaseDb
       .auth()
       .signInWithEmailAndPassword(this.state.email, this.state.password)
       .then((res) => {
