@@ -46,6 +46,9 @@ function MyStack() {
          { title: 'Dashboard' }
        }
       />
+       <Stack.Screen name="Categories" component={CategoriesScreen} />
+       <Stack.Screen name="Question" component={QuestionScreen} initialParams={{ questionIndex: 0 }}/>
+       <Stack.Screen name="Summary" component={SummaryScreen} />
     </Stack.Navigator>
   );
 }

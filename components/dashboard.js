@@ -32,6 +32,13 @@ export default class Dashboard extends Component {
           title="Logout"
           onPress={() => this.signOut()}
         />
+        <Button
+        title="Quickstart"
+        onPress={() => {
+          /* 1. Navigate to the categories pages */
+          this.props.navigation.navigate('Categories');
+        }}
+      />
       </View>
     );
   }

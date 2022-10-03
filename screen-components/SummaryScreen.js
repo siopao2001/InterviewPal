@@ -36,7 +36,7 @@ export default function SummaryScreen({ route, navigation }) {
         title="Start again"
         onPress={() => {
           
-          navigation.navigate('Home');
+          navigation.navigate('Dashboard');
         }}
       />
     </View>
