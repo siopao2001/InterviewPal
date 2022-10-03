@@ -10,7 +10,8 @@ export default StyleSheet.create({
     backgroundColor: '#fff'
   },
   textStyle: {
-    fontSize: 15,
-    marginBottom: 20
-  }
+    fontSize: 18,
+    marginBottom: 20,
+    textAlign: 'center'
+  },
 });

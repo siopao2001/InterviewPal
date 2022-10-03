@@ -25,8 +25,8 @@ export default class Dashboard extends Component {
     return (
       <View style={styles.container}>
         <Text style = {styles.textStyle}>
-          Hello, {this.state.displayName}
-        </Text>
+          {`Hello, ${this.state.displayName}. \n \nWelcome to InterviewPal
+        `}</Text>
         <Button
           color="#42f590"
           title="Logout"
