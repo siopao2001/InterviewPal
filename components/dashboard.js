@@ -28,7 +28,7 @@ export default class Dashboard extends Component {
           Hello, {this.state.displayName}
         </Text>
         <Button
-          color="#3740FE"
+          color="#42f590"
           title="Logout"
           onPress={() => this.signOut()}
         />

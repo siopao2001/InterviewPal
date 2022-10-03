@@ -12,14 +12,6 @@ import CategoriesScreen from './screen-components/CategoriesScreen';
 import QuestionScreen from './screen-components/QuestionScreen';
 import SummaryScreen from './screen-components/SummaryScreen';
 
-// const styles = StyleSheet.create({
-//   container: {
-//     flex: 1,
-//     backgroundColor: '#fff',
-//     alignItems: 'center',
-//     justifyContent: 'center',
-//   },
-// });
 
 function MyStack() {
   return (
@@ -28,7 +20,7 @@ function MyStack() {
       screenOptions={{
         headerTitleAlign: 'center',
         headerStyle: {
-          backgroundColor: '#3740FE',
+          backgroundColor: '#aa42f5',
         },
         headerTintColor: '#fff',
         headerTitleStyle: {

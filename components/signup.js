@@ -84,8 +84,8 @@ export default class Signup extends Component {
           secureTextEntry={true}
         />   
         <Button
-          color="#3740FE"
-          title="Signup"
+          color="#42f590"
+          title="Sign up"
           onPress={() => this.registerUser()}
         />
         <Text 

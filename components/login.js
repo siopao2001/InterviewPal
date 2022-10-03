@@ -68,14 +68,14 @@ export default class Login extends Component {
           secureTextEntry={true}
         />   
         <Button
-          color="#3740FE"
-          title="Signin"
+          color="#42f590"
+          title="Sign in"
           onPress={() => this.userLogin()}
         />   
         <Text 
           style={styles.loginText}
           onPress={() => this.props.navigation.navigate('Signup')}>
-          Don't have account? Click here to signup
+          Don't have account? Click here to get started.
         </Text>                          
       </View>
     );

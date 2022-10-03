@@ -18,7 +18,7 @@ export default StyleSheet.create({
     borderBottomWidth: 1
   },
   loginText: {
-    color: '#3740FE',
+    color: '#42f590',
     marginTop: 25,
     textAlign: 'center'
   },
