@@ -1,7 +1,9 @@
 // components/dashboard.js
 import React, { Component } from 'react';
 import { StyleSheet, View, Text, Button } from 'react-native';
+import styles from '../styling/dashboard.style';
 import firebaseDb from '../firebaseDb';
+
 export default class Dashboard extends Component {
   constructor() {
     super();
@@ -34,17 +36,3 @@ export default class Dashboard extends Component {
     );
   }
 }
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    display: "flex",
-    justifyContent: 'center',
-    alignItems: 'center',
-    padding: 35,
-    backgroundColor: '#fff'
-  },
-  textStyle: {
-    fontSize: 15,
-    marginBottom: 20
-  }
-});
