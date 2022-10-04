@@ -3,5 +3,6 @@ CREATE TABLE questions (
   id SERIAL PRIMARY KEY NOT NULL,
   text TEXT,
   comments TEXT,
-  timer TIMESTAMP
+  timer TIMESTAMP,
+  category INTEGER NOT NULL REFERENCES categories(id)
 );
