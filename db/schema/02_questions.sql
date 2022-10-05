@@ -4,5 +4,5 @@ CREATE TABLE questions (
   text TEXT,
   comments TEXT,
   timer TIMESTAMP,
-  category INTEGER NOT NULL REFERENCES categories(id)
+  category INTEGER NOT NULL REFERENCES categories(id) ON DELETE CASCADE
 );
