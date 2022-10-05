@@ -23,7 +23,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // });
 
 // test route
-app.get("/", db.getCategories);
+app.get("/categories", db.getCategories);
+app.get("/questions", db.getQuestions);
 
 // set port, listen for requests
 const PORT = process.env.PORT || 8080;
