@@ -26,7 +26,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.get("/categories", db.getCategories);
 app.get("/questions", db.getQuestions);
 app.get("/answers", db.getAnswers);
-
+app.post("/answers", db.addAnswer);
 // set port, listen for requests
 const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {

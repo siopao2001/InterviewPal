@@ -34,8 +34,20 @@ const getAnswers = (request, response) => {
 })
 };
 
+const addAnswer = (request, response) => {
+  const { answer, questionId } = request.body
+
+  pool.query('INSERT INTO answers (answer, questionId) VALUES ($1, $2)', [answer, questionId], (error, results) => {
+    if (error) {
+      throw error
+    }
+    response.status(201).send(`User added with ID: ${results.insertId}`)
+  })
+}
+
 module.exports = {
   getCategories,
   getQuestions,
-  getAnswers
+  getAnswers,
+  addAnswer
 } 
