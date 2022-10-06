@@ -8,7 +8,7 @@ INSERT INTO answers (
 
 INSERT INTO answers (
   answer, questionId )
-  VALUES ('his is my answer question 3', 3);
+  VALUES ('This is my answer question 3', 3);
 
 INSERT INTO answers (
   answer, questionId )
