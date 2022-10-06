@@ -3,26 +3,11 @@ import React, {useState, useEffect} from 'react';
 import { Text, View, Button, TextInput } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import { answers } from '../data-hardcoded/data';
-import { addAnswer } from '../data_helpers/dataHelpers';
+// import { answers } from '../data-hardcoded/data';
+// import { addAnswer } from '../data_helpers/dataHelpers';
 
-// export default function QuestionScreen({ route, navigation }) {
-//   const { catId, questionId } = route.params;
+const addAnswer = function()
 
-//   return (
-//     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-//       <Text>This is the category number for this question: {catId}</Text>
-//       <Text>This is the question number: {questionId}</Text>
-//       {questionId > 3 
-//         ?  <Button title="Summary" onPress={() => {navigation.navigate('Summary')}}/>
-//         : <Button
-//         title="Next Question"
-//         onPress={() => navigation.push('Question', {catId: catId, questionId: questionId + 1})}
-//       />
-//       }
-//     </View>
-//   );
-// }
 
 export default function QuestionScreen({ route, navigation }) {
   const { array, questionIndex} = route.params;
@@ -42,8 +27,6 @@ export default function QuestionScreen({ route, navigation }) {
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
       <Text>{time}</Text>
-      <Text>This is the category number for this question: </Text>
-      <Text>This is the question number for this question: {questionIndex}</Text>
       <Text>{array[questionIndex].text}</Text>
       <TextInput style={{width: 300, height: 100, margin: 12, borderWidth: 1, padding: 10}} 
         placeholder="type your answer" 
