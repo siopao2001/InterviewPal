@@ -25,6 +25,8 @@ export default function SummaryScreen({ route, navigation }) {
   const { array } = route.params;
   const [answers, setAnswers] = useState([]);
   const array1 = [...answers];
+  //const test = lastAnswerByQuestionID(array1, 1)
+  //console.log(test)
 
   useEffect(() => {
       axios.get("http://localhost:8080/answers")

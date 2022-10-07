@@ -36,7 +36,7 @@ export const addAnswer = (ansText, id, ansArray) => {
 export const lastAnswerByQuestionID = (array, qId) => {
    let ansArray = []
     for(const ans of array) {
-       if (ans.questionId === qId) {
+       if (ans.questionid === qId) {
           ansArray.push(ans.answer)
        }
     }
