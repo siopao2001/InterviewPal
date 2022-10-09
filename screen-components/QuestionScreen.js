@@ -21,20 +21,23 @@ export default function QuestionScreen({ route, navigation }) {
   const { array, questionIndex} = route.params;
   const [text, onChangeText] = useState("Your answer");
   const [time, setTime] = useState(0);
-
+//Total time as parent state
   useEffect(() => {
-    const intervalId = setInterval(() => {
-      setTime((prev) => prev + 1);
-    }, 1000);
-
-    return () => {
-      clearInterval(intervalId);
-    };
+      
+      const intervalId = setInterval(() => {
+        setTime((prev) => prev + 1);
+      }, 1000);
+  
+      return () => {
+        clearInterval(intervalId);
+      };
+      
   }, []);
+
 
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Text>{time}</Text>
+      <Text>{time%60<10?`${Math.floor(time/60)}:0${time%60}`:`${Math.floor(time/60)}:${time%60}`}</Text>
       <Text>{array[questionIndex].text}</Text>
       <TextInput style={{width: 300, height: 100, margin: 12, borderWidth: 1, padding: 10}} 
         placeholder="type your answer" 
