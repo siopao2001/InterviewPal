@@ -1,6 +1,7 @@
 import * as React from 'react';
 import {useState, useEffect} from 'react';
 import { Text, View, Button } from 'react-native';
+import styles from '../styling/questionscreen.style';
 import { lastAnswerByQuestionID } from '../data_helpers/dataHelpers';
 import axios from 'axios';
 
@@ -22,21 +23,24 @@ export default function SummaryScreen({ route, navigation }) {
 
   const questionsList = array.map((q) =>
     <View key={q.id}> 
-     <Text>{q.text}</Text>
-     <Text>{lastAnswerByQuestionID(array1, q.id)}</Text>
+     <Text>{`Question: ${q.text}`}</Text>
+     <Text>{`Your Answer: ${lastAnswerByQuestionID(array1, q.id)}`}</Text>
     </View>
    )
   return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Text>This is the summary page</Text>
+    <View style={styles.container}>
+      <Text style={styles.textStyle}>VIEW YOUR RESULTS</Text>
       {questionsList}
+      <View style={styles.bottom}>
       <Button
         title="Start again"
+        color="#fff"
         onPress={() => {
           
           navigation.navigate('Dashboard');
         }}
       />
+      </View>
     </View>
   );
 }
