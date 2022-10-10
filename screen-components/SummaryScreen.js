@@ -23,7 +23,7 @@ export default function SummaryScreen({ route, navigation }) {
 
   const questionsList = array.map((q) =>
     <View key={q.id}> 
-     <Text>{`Question: ${q.text}`}</Text>
+     <Text style={{fontWeight: 'bold'}}>{`Question: ${q.text}`}</Text>
      <Text>{`Your Answer: ${lastAnswerByQuestionID(array1, q.id)}`}</Text>
     </View>
    )
