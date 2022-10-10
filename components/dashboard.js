@@ -32,11 +32,13 @@ export default class Dashboard extends Component {
         `}</Text>
         </FadeInView>
 
-        <Image 
-        source={require('../planning/chat-bubble.jpeg')} 
-        style={{ width: 100, height: 100 }}
+        <Image
+          source={require('../planning/chat-bubble.jpeg')}
+          style={{ width: 100, height: 100 }}
         />
 
+       
+        <View style={styles.bottom}>
         <Button
           title="Quickstart"
           onPress={() => {
@@ -44,13 +46,12 @@ export default class Dashboard extends Component {
             this.props.navigation.navigate('Categories');
           }}
         />
-
-        <Button
-          color="#42f590"
-          title="Logout"
-          onPress={() => this.signOut()}
-        />
-
+          <Button
+            color="#42f590"
+            title="Logout"
+            onPress={() => this.signOut()}
+          />
+        </View>
       </View>
     );
   }
