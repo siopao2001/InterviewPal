@@ -1,6 +1,7 @@
 //import * as React from 'react';
 import React, { useState, useEffect } from 'react';
 import { Text, View, Button, TextInput } from 'react-native';
+import styles from '../styling/questionscreen.style';
 import ConfettiCannon from 'react-native-confetti-cannon';
 import axios from 'axios';
 
@@ -58,32 +59,35 @@ export default function QuestionScreen({ route, navigation }) {
         multiline={true}
         value={text}
       />
+      <View style={styles.bottom}>
+        {questionIndex > 2
+          ?
+          <Button
+            title="Summary"
+            disabled={text === "Your answer" ? true : false}
+            color="#fff"
+            onPress={
+              () => {
+                addAnswer(text, array[questionIndex].id);
+                startAnimation();
+                //  navigation.navigate('Summary',{array: array});
+              }
+            }
 
+          />
+          : <Button
+            title="Next Question"
+            color="#fff"
+            disabled={text === "Your answer" ? true : false}
+            onPress={() => {
+              addAnswer(text, array[questionIndex].id)
+              navigation.push('Question', { array: array, questionIndex: questionIndex + 1 })
+            }
+            }
+          />
 
-
-      {questionIndex > 2
-        ? <Button
-          title="Summary"
-          disabled={text === "Your answer" ? true : false}
-          onPress={ 
-            () => {
-          //  addAnswer(text, array[questionIndex].id);
-          //  navigation.navigate('Summary',{array: array});
-           startAnimation();
-         }
         }
-
-        />
-        : <Button
-          title="Next Question"
-          disabled={text === "Your answer" ? true : false}
-          onPress={() => {
-            addAnswer(text, array[questionIndex].id)
-            navigation.push('Question', { array: array, questionIndex: questionIndex + 1 })
-          }
-          }
-        />
-      }
+      </View>
 
       {animate ?
         <ConfettiCannon
