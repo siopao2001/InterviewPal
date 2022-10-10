@@ -1,8 +1,8 @@
-// components/dashboard.js
-import React, { Component } from 'react';
-import { StyleSheet, View, Text, Button } from 'react-native';
+import React, { Component, useRef, useEffect } from 'react';
+import { Animated, Text, View, Button } from 'react-native';
 import styles from '../styling/dashboard.style';
 import firebaseDb from '../firebaseDb';
+
 
 export default class Dashboard extends Component {
   constructor() {
@@ -22,12 +22,15 @@ export default class Dashboard extends Component {
       displayName: firebaseDb.auth().currentUser.displayName,
       uid: firebaseDb.auth().currentUser.uid
     }
+
+
     return (
       <View style={styles.container}>
-        <Text style={styles.textStyle}>
-          {`Hello, ${this.state.displayName}. \n \nWelcome to InterviewPal
+        <FadeInView>
+          <Text style={styles.textStyle}>
+            {`Hello, ${this.state.displayName}. \n \nWelcome to InterviewPal
         `}</Text>
-
+        </FadeInView>
         <Button
           title="Quickstart"
           onPress={() => {
@@ -45,4 +48,30 @@ export default class Dashboard extends Component {
       </View>
     );
   }
-}
+};
+
+const FadeInView = (props) => {
+  const fadeAnim = useRef(new Animated.Value(0)).current  // Initial value for opacity: 0
+
+  useEffect(() => {
+    Animated.timing(
+      fadeAnim,
+      {
+        toValue: 1,
+        duration: 10000,
+      }
+    ).start();
+  }, [fadeAnim])
+
+  return (
+    <Animated.View                 // Special animatable View
+      style={{
+        ...props.style,
+        opacity: fadeAnim,         // Bind opacity to animated value
+      }}
+    >
+      {props.children}
+    </Animated.View>
+  );
+};
+
