@@ -1,5 +1,5 @@
 import React, { Component, useRef, useEffect } from 'react';
-import { Animated, Text, View, Button } from 'react-native';
+import { Animated, Text, View, Button, Image } from 'react-native';
 import styles from '../styling/dashboard.style';
 import firebaseDb from '../firebaseDb';
 
@@ -31,6 +31,12 @@ export default class Dashboard extends Component {
             {`Hello, ${this.state.displayName}. \n \nWelcome to InterviewPal
         `}</Text>
         </FadeInView>
+
+        <Image 
+        source={require('../planning/chat-bubble.jpeg')} 
+        style={{ width: 100, height: 100 }}
+        />
+
         <Button
           title="Quickstart"
           onPress={() => {
