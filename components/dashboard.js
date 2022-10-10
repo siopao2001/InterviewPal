@@ -34,24 +34,26 @@ export default class Dashboard extends Component {
 
         <Image
           source={require('../planning/chat-bubble.jpeg')}
-          style={{ width: 100, height: 100 }}
+          style={{ width: 120, height: 110 }}
         />
 
        
         <View style={styles.bottom}>
         <Button
           title="Quickstart"
+          color="#fff"
           onPress={() => {
             /* 1. Navigate to the categories pages */
             this.props.navigation.navigate('Categories');
           }}
         />
+        </View>
           <Button
             color="#42f590"
             title="Logout"
             onPress={() => this.signOut()}
           />
-        </View>
+        
       </View>
     );
   }
