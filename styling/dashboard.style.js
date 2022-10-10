@@ -8,22 +8,29 @@ export default StyleSheet.create({
     alignItems: 'center',
     padding: 35,
     backgroundColor: '#fff',
-    borderColor: 'skyblue',
+    borderColor: 'lightgreen',
     borderWidth: 13,
     borderRightColor: 'pink',
-    borderLeftColor: '#42f590',
+    borderLeftColor: 'skyblue',
     borderBottomColor: 'lavender',
-    borderBottomStartRadius: 50,
-    borderBottomEndRadius: 50
+    borderBottomStartRadius: 45,
+    borderBottomEndRadius: 45,
 
   },
   textStyle: {
     fontSize: 22,
     marginBottom: 20,
-    textAlign: 'center'
+    textAlign: 'center',
+    textShadowColor: '#42f590',
+    textShadowOffset: {width: 5, height: 5},
+    textShadowRadius:5,
+    paddingBottom: 50
+    
   },
   bottom: {
-    paddingTop: 200,
- 
+    borderWidth: 5,
+    borderColor: 'grey',
+    padding: 2,
+    backgroundColor: '#CF9FFF'
   }
 });
