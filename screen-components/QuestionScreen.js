@@ -70,7 +70,7 @@ export default function QuestionScreen({ route, navigation }) {
               () => {
                 addAnswer(text, array[questionIndex].id);
                 startAnimation();
-                //  navigation.navigate('Summary',{array: array});
+                setTimeout(()=> navigation.navigate('Summary',{array: array}), 2800);
               }
             }
 
