@@ -2,7 +2,7 @@
 
 ## Project Description 
 
-InterviewPal is a React-native mobile app developed for our final project at Lighthouse Labs. It is designed to be an interview companion that helps prepare users for job readiness by mocking real-world interview scenarios. The front ened of this project is built with React-native and makes requests to an API to fetch and store interview data from a database. 
+InterviewPal is a React-native mobile app developed for our final project at Lighthouse Labs. It is designed to be an interview companion that helps prepare users for job readiness by mocking real-world interview scenarios. The front end of this project is built with React-native and makes requests to an API to fetch and store interview data from a database. 
 
 ## Project Features
 
