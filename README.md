@@ -27,7 +27,7 @@ _Login view_
 _Start the app with option to logout instead_
 
 ### Categories 
-!["Categories screen"](https://user-images.githubusercontent.com/75033003/194987093-18c2c564-7bf9-4919-aeff-3cc896b44e76.png)
+!["Categories Screen"](https://user-images.githubusercontent.com/75033003/194987520-8c5a82ef-e25a-4d17-a5d4-e292806a7648.png)
 
 _Choose desired industry to begin mock interview_
 
