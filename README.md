@@ -1,4 +1,4 @@
-# Interview Scheduler
+# InterviewPal Final Project
 
 ## Project Description 
 
