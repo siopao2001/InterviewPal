@@ -4,7 +4,8 @@ import { block } from 'react-native-reanimated';
 export default StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: 'center',
+    alignItems: 'left',
+    paddingLeft: 20,
     justifyContent: 'space-evenly',
     margin: 6,
   },
