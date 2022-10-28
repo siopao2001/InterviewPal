@@ -35,9 +35,9 @@ const getAnswers = (request, response) => {
 };
 
 const addAnswer = (request, response) => {
-  const { answer, questionid } = request.body
+  const { answer, questionid, timer } = request.body
 
-  pool.query('INSERT INTO answers (answer, questionId) VALUES ($1, $2)', [answer, questionid], (error, results) => {
+  pool.query('INSERT INTO answers (answer, questionId, timer) VALUES ($1, $2, $3)', [answer, questionid, timer], (error, results) => {
     if (error) {
       throw error
     }

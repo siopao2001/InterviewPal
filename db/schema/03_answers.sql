@@ -2,6 +2,6 @@ DROP TABLE IF EXISTS answers CASCADE;
 CREATE TABLE answers (
   id SERIAL PRIMARY KEY NOT NULL,
   answer TEXT,
-  timer  NUMERIC,
+  timer  INTEGER,
   questionId INTEGER NOT NULL REFERENCES questions(id) ON DELETE CASCADE
 );

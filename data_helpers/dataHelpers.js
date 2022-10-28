@@ -42,3 +42,14 @@ export const lastAnswerByQuestionID = (array, qId) => {
     }
     return ansArray[ansArray.length - 1]
 }
+
+//retrieves the last answer entered associated with a question
+export const lastTimeByQuestionID = (array, qId) => {
+   let ansArray = []
+    for(const ans of array) {
+       if (ans.questionid === qId) {
+          ansArray.push(ans.timer)
+       }
+    }
+    return ansArray[ansArray.length - 1]
+}

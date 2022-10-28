@@ -6,11 +6,12 @@ import ConfettiCannon from 'react-native-confetti-cannon';
 import axios from 'axios';
 
 
-const addAnswer = function (ansX, questX) {
+const addAnswer = function (ansX, questX, timeX) {
   axios.post("http://localhost:8080/answers",
     {
       answer: ansX,
-      questionid: questX
+      questionid: questX,
+      timer: timeX
     }).catch((error) => {
       console.log("Error", error)
     })
@@ -68,7 +69,7 @@ export default function QuestionScreen({ route, navigation }) {
             color="#fff"
             onPress={
               () => {
-                addAnswer(text, array[questionIndex].id);
+                addAnswer(text, array[questionIndex].id, time);
                 startAnimation();
                 setTimeout(()=> navigation.navigate('Summary',{array: array}), 2800);
               }
@@ -80,7 +81,7 @@ export default function QuestionScreen({ route, navigation }) {
             color="#fff"
             disabled={text === "Your answer" ? true : false}
             onPress={() => {
-              addAnswer(text, array[questionIndex].id)
+              addAnswer(text, array[questionIndex].id, time)
               navigation.push('Question', { array: array, questionIndex: questionIndex + 1 })
             }
             }
